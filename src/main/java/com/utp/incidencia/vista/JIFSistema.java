@@ -37,12 +37,12 @@ public class JIFSistema extends javax.swing.JInternalFrame {
 
     public void recorrer() {
         for (int i = 0; i < lista.size(); i++) {
-            fila[0] = i+1;
+            fila[0] = i + 1;
             fila[1] = lista.get(i).getDesSistema();
             modelo.addRow(fila);
         }
         tbSistema.setModel(modelo);
-        
+
     }
 
     public JIFSistema() {

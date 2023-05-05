@@ -12,12 +12,14 @@ import java.util.List;
  */
 public class Incidencia {
 
+    private int id;
     private String asunto, descripcion, prioridad, equipo, contacto, area, tipo;
 
     public Incidencia() {
     }
 
-    public Incidencia(String asunto, String descripcion, String prioridad, String equipo, String contacto, String area, String tipo) {
+    public Incidencia(int id, String asunto, String descripcion, String prioridad, String equipo, String contacto, String area, String tipo) {
+        this.id = id;
         this.asunto = asunto;
         this.descripcion = descripcion;
         this.prioridad = prioridad;
@@ -27,7 +29,13 @@ public class Incidencia {
         this.tipo = tipo;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getAsunto() {
         return asunto;
@@ -83,6 +91,11 @@ public class Incidencia {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Incidencia{" + "asunto=" + asunto + ", descripcion=" + descripcion + ", prioridad=" + prioridad + ", equipo=" + equipo + ", contacto=" + contacto + ", area=" + area + ", tipo=" + tipo + '}';
     }
 
 }
