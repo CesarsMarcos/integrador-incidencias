@@ -397,7 +397,7 @@ public class JIFIncidencia extends javax.swing.JInternalFrame {
             llenarTabla();
             limpiar();
 
-            JOptionPane.showMessageDialog(msg, "Incidencia registrada", "Success", JOptionPane.INFORMATION_MESSAGE);
+            
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 

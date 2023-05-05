@@ -25,7 +25,7 @@ public class IncidenciaController {
 
     public void agregar(Incidencia i) {
         if (!find(i.getId())) {
-            System.out.println("Registro creado");
+            JOptionPane.showMessageDialog(msg, "Incidencia registrada", "Success", JOptionPane.INFORMATION_MESSAGE);
             incidencias.add(i);
         }
         //incidencias.add(i);
@@ -61,9 +61,10 @@ public class IncidenciaController {
             rec.setEquipo(i.getEquipo());
             rec.setPrioridad(i.getPrioridad());
             rec.setTipo(i.getTipo());
-            System.out.println("Record Updated Successfully");
+            JOptionPane.showMessageDialog(msg, "Incidencia actualizada", "Success", JOptionPane.INFORMATION_MESSAGE);
+           
         } else {
-            System.out.println("Record Not Found in the Student list");
+            System.out.println("No encontrado");
         }
     }
 
@@ -78,14 +79,12 @@ public class IncidenciaController {
             System.out.println("Id invalido");
         } else {
             incidencias.remove(recordDel);
-            System.out.println("Registro eliminado de la lista");
             JOptionPane.showMessageDialog(msg, "Registro eliminado con éxito", "Success", JOptionPane.INFORMATION_MESSAGE);
 
         }
     }
 
     public List<Incidencia> incidencias() {
-        System.out.println("tamanio " + incidencias.size());
         return incidencias;
     }
 
