@@ -11,7 +11,18 @@ package com.utp.incidencia.modelo;
 public class Usuario {
 
     private String nombre, apellido, usuario, password;
+    private Rol rol;
 
+    public Usuario(String nombre, String apellido, String usuario, String password, Rol rol) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.usuario = usuario;
+        this.password = password;
+        this.rol = rol;
+    }
+
+   
+    
     public Usuario(String nombre, String apellido, String usuario, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -55,5 +66,16 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+    
+    
+    
 
 }

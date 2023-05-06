@@ -4,6 +4,7 @@
  */
 package com.utp.incidencia.controlador;
 
+import com.utp.incidencia.modelo.Rol;
 import com.utp.incidencia.modelo.Usuario;
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +19,8 @@ public class UsuarioControlador {
     List<Usuario> lista;
 
     public List<Usuario> cargarUsuarios() {
-        lista = Arrays.asList(new Usuario("CESAR", "MARCOS", "CMARCOS", "12345"));
+        lista = Arrays.asList(new Usuario("CESAR", "MARCOS", "CMARCOS", "12345", Rol.ADMIN),
+                                new Usuario("USUARIO", "USUARIO", "USUARIO1", "12345", Rol.USUARIO));
         return lista;
     }
 

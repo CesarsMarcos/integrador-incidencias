@@ -4,6 +4,12 @@
  */
 package com.utp.incidencia.vista;
 
+import javax.swing.JDesktopPane;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Cesar
@@ -12,6 +18,23 @@ public class JFPrincipal extends javax.swing.JFrame {
 
     public JFPrincipal() {
         initComponents();
+
+    }
+
+    public JMenu getOpConfiguracion() {
+        return opConfiguracion;
+    }
+
+    public void setOpConfiguracion(JMenu opConfiguracion) {
+        this.opConfiguracion = opConfiguracion;
+    }
+
+    public JMenu getOpIncidencia() {
+        return opIncidencia;
+    }
+
+    public void setOpIncidencia(JMenu opIncidencia) {
+        this.opIncidencia = opIncidencia;
     }
 
     @SuppressWarnings("unchecked")
@@ -20,15 +43,18 @@ public class JFPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         escritorio = new javax.swing.JDesktopPane();
-        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenuBar = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         opIncidencia = new javax.swing.JMenu();
         opNuevaIncidencia = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        opConfiguracion = new javax.swing.JMenu();
         opSistema = new javax.swing.JMenuItem();
         opTipo = new javax.swing.JMenuItem();
         opArea = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Panel Principal");
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
@@ -38,7 +64,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 678, Short.MAX_VALUE)
+            .addGap(0, 778, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -51,10 +77,20 @@ public class JFPrincipal extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(escritorio)
         );
+
+        jMenu1.setText("Archivo");
+
+        jMenuItem1.setText("Salir");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar.add(jMenu1);
 
         opIncidencia.setText("Incidencia");
         opIncidencia.addActionListener(new java.awt.event.ActionListener() {
@@ -71,9 +107,9 @@ public class JFPrincipal extends javax.swing.JFrame {
         });
         opIncidencia.add(opNuevaIncidencia);
 
-        jMenuBar2.add(opIncidencia);
+        jMenuBar.add(opIncidencia);
 
-        jMenu4.setText("Configuración");
+        opConfiguracion.setText("Configuración");
 
         opSistema.setText("Sistemas");
         opSistema.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +117,7 @@ public class JFPrincipal extends javax.swing.JFrame {
                 opSistemaActionPerformed(evt);
             }
         });
-        jMenu4.add(opSistema);
+        opConfiguracion.add(opSistema);
 
         opTipo.setText("Tipos");
         opTipo.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +125,7 @@ public class JFPrincipal extends javax.swing.JFrame {
                 opTipoActionPerformed(evt);
             }
         });
-        jMenu4.add(opTipo);
+        opConfiguracion.add(opTipo);
 
         opArea.setText("Area");
         opArea.addActionListener(new java.awt.event.ActionListener() {
@@ -97,11 +133,11 @@ public class JFPrincipal extends javax.swing.JFrame {
                 opAreaActionPerformed(evt);
             }
         });
-        jMenu4.add(opArea);
+        opConfiguracion.add(opArea);
 
-        jMenuBar2.add(jMenu4);
+        jMenuBar.add(opConfiguracion);
 
-        setJMenuBar(jMenuBar2);
+        setJMenuBar(jMenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,7 +147,9 @@ public class JFPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -145,10 +183,16 @@ public class JFPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_opNuevaIncidenciaActionPerformed
 
     private void opAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opAreaActionPerformed
-        JIFArea jArea = new JIFArea();
+        JIFAreas jArea = new JIFAreas();
         escritorio.add(jArea);
         jArea.show();
     }//GEN-LAST:event_opAreaActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+
+        System.exit(0);
+
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,10 +232,12 @@ public class JFPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem opArea;
+    private javax.swing.JMenu opConfiguracion;
     private javax.swing.JMenu opIncidencia;
     private javax.swing.JMenuItem opNuevaIncidencia;
     private javax.swing.JMenuItem opSistema;
