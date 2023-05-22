@@ -28,7 +28,6 @@ public class IncidenciaController {
             JOptionPane.showMessageDialog(msg, "Incidencia registrada", "Success", JOptionPane.INFORMATION_MESSAGE);
             incidencias.add(i);
         }
-        //incidencias.add(i);
     }
 
     public boolean find(int idNumber) {
@@ -41,7 +40,7 @@ public class IncidenciaController {
         return false;
     }
 
-    public Incidencia findRecord(int idNumber) {
+    public Incidencia findRegistro(int idNumber) {
         for (Incidencia l : incidencias) {
             if (l.getId() == idNumber) {
                 return l;
@@ -50,9 +49,9 @@ public class IncidenciaController {
         return null;
     }
 
-    public void update(int id, Incidencia i) {
+    public void modificar(int id, Incidencia i) {
         if (find(id)) {
-            Incidencia rec = findRecord(id);
+            Incidencia rec = findRegistro(id);
             rec.setId(i.getId());
             rec.setArea(i.getArea());
             rec.setAsunto(i.getAsunto());
@@ -62,7 +61,7 @@ public class IncidenciaController {
             rec.setPrioridad(i.getPrioridad());
             rec.setTipo(i.getTipo());
             JOptionPane.showMessageDialog(msg, "Incidencia actualizada", "Success", JOptionPane.INFORMATION_MESSAGE);
-           
+
         } else {
             System.out.println("No encontrado");
         }

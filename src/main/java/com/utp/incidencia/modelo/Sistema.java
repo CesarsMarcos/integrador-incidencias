@@ -12,15 +12,15 @@ public class Sistema {
 
     private Integer id;
     private String desSistema;
-    private String desCota;
+    private String desCorta;
 
     public Sistema() {
     }
 
-    public Sistema(Integer id, String desSistema, String desCota) {
+    public Sistema(Integer id, String desSistema, String desCorta) {
         this.id = id;
         this.desSistema = desSistema;
-        this.desCota = desCota;
+        this.desCorta = desCorta;
     }
 
     public Sistema(String desSistema) {
@@ -43,12 +43,12 @@ public class Sistema {
         this.id = id;
     }
 
-    public String getDesCota() {
-        return desCota;
+    public String getDesCorta() {
+        return desCorta;
     }
 
-    public void setDesCota(String desCota) {
-        this.desCota = desCota;
+    public void setDesCorta(String desCorta) {
+        this.desCorta = desCorta;
     }
 
 }

@@ -4,8 +4,6 @@
  */
 package com.utp.incidencia.modelo;
 
-import java.util.List;
-
 /**
  *
  * @author Cesar
@@ -91,11 +89,6 @@ public class Incidencia {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    @Override
-    public String toString() {
-        return "Incidencia{" + "asunto=" + asunto + ", descripcion=" + descripcion + ", prioridad=" + prioridad + ", equipo=" + equipo + ", contacto=" + contacto + ", area=" + area + ", tipo=" + tipo + '}';
     }
 
 }

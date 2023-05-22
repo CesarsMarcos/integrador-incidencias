@@ -9,7 +9,8 @@ package com.utp.incidencia.modelo;
  * @author Cesar
  */
 public class Usuario {
-
+    
+    private int id ;
     private String nombre, apellido, usuario, password;
     private Rol rol;
 

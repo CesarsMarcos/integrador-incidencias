@@ -4,31 +4,32 @@
  */
 package com.utp.incidencia.modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Cesar
  */
 public class Area {
 
-    private Integer id;
     private String desArea;
-    private String desCota;
+    private String desCorta;
+
+    private ArrayList<Area> areas;
+
+    public Area(ArrayList<Area> areas) {
+        this.areas = areas;
+
+    }
 
     public Area() {
+        this.areas = new ArrayList<>();
+
     }
 
-    public Area(Integer id, String desArea, String desCota) {
-        this.id = id;
+    public Area(String desArea, String desCorta) {
         this.desArea = desArea;
-        this.desCota = desCota;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+        this.desCorta = desCorta;
     }
 
     public String getDesArea() {
@@ -39,12 +40,34 @@ public class Area {
         this.desArea = desArea;
     }
 
-    public String getDesCota() {
-        return desCota;
+    public String getDesCorta() {
+        return desCorta;
     }
 
-    public void setDesCota(String desCota) {
-        this.desCota = desCota;
+    public void setDesCorta(String desCorta) {
+        this.desCorta = desCorta;
     }
 
+    public ArrayList<Area> getAreas() {
+        return areas;
+    }
+
+    public void setAreas(ArrayList<Area> areas) {
+        this.areas = areas;
+    }
+
+    public void addArea(Area area) {
+        areas.add(area);
+    }
+
+    public void eliminar(int index) {
+        this.areas.remove(index);
+    }
+
+    public Area getArea(int index) {
+        return this.areas.get(index);
+    }
+
+    
+    
 }

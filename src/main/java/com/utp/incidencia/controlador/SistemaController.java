@@ -5,6 +5,9 @@
 package com.utp.incidencia.controlador;
 
 import com.utp.incidencia.modelo.Sistema;
+import com.utp.incidencia.vista.JIFSistema;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,7 +15,10 @@ import java.util.List;
  *
  * @author Cesar
  */
-public class SistemaController {
+public class SistemaController implements ActionListener {
+
+    Sistema sistema;
+    JIFSistema frmSistema;
 
     public List<Sistema> sistemas() {
 
@@ -26,6 +32,15 @@ public class SistemaController {
         List<Sistema> sistemas = this.sistemas();
         sistemas = Arrays.asList(s);
         return sistemas;
+    }
+
+    public void iniciar() {
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 
 }

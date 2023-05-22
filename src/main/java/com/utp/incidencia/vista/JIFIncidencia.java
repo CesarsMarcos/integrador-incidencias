@@ -18,15 +18,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class JIFIncidencia extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form JIFIncidencia
-     */
     IncidenciaController incidenciaController = new IncidenciaController();
     DefaultTableModel modelo; //= (DefaultTableModel) tbIncidencias.getModel();
     JPanel msg = new JPanel();
 
-    //
-    public boolean checkEmpty() {
+    public boolean validaCampos() {
         boolean checkEmpty = false;
         if (this.txtAsunto.getText().isEmpty() || this.txtContacto.getText().isEmpty() || this.txtDescripcion.getText().isEmpty()
                 || this.txtEquipo.getText().isEmpty() || txtArea.getText().isEmpty()
@@ -79,14 +75,8 @@ public class JIFIncidencia extends javax.swing.JInternalFrame {
         }
     }
 
-    public void actionPerformed(ActionEvent e) {
-        // Obtenemos el primer dato del renglon seleccionado
-
-    }
-
     public JIFIncidencia() {
         initComponents();
-
     }
 
     @SuppressWarnings("unchecked")
@@ -424,7 +414,6 @@ public class JIFIncidencia extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cboPrioridadActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-
         Incidencia incidencia = new Incidencia();
         incidencia.setId(Integer.parseInt(txtId.getText()));
         incidencia.setArea(txtArea.getText());
@@ -435,14 +424,13 @@ public class JIFIncidencia extends javax.swing.JInternalFrame {
         incidencia.setPrioridad(cboPrioridad.getSelectedItem().toString());
         incidencia.setTipo(cboTipo.getSelectedItem().toString());
 
-        if (checkEmpty()) {
+        if (validaCampos()) {
             JOptionPane.showMessageDialog(msg, "Completa todos los campos!", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             incidenciaController.agregar(incidencia);
             llenarTabla();
             limpiar();
 
-            
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -473,7 +461,7 @@ public class JIFIncidencia extends javax.swing.JInternalFrame {
         incidencia.setPrioridad(cboPrioridad.getSelectedItem().toString());
         incidencia.setTipo(cboTipo.getSelectedItem().toString());
 
-        incidenciaController.update(incidencia.getId(), incidencia);
+        incidenciaController.modificar(incidencia.getId(), incidencia);
 
         btnGuardar.setEnabled(true);
         btnEliminar.setEnabled(true);

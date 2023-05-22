@@ -9,9 +9,9 @@ package com.utp.incidencia.modelo;
  * @author Cesar
  */
 public enum Rol {
-    
+
     ADMIN,
     USUARIO,
     ESPECIALISTA
-    
+
 }

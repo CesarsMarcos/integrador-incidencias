@@ -7,7 +7,6 @@ package com.utp.incidencia.vista;
 import com.utp.incidencia.controlador.UsuarioControlador;
 import com.utp.incidencia.modelo.Rol;
 import com.utp.incidencia.modelo.Usuario;
-import java.awt.ComponentOrientation;
 import java.util.List;
 import java.util.Optional;
 import javax.swing.JOptionPane;
@@ -160,7 +159,7 @@ public class JFLogin extends javax.swing.JFrame {
 
         if (username.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Acceso denegado:\n" + "El usuario y/o contraseña no deben ser vacios", "Acceso denegado", JOptionPane.ERROR_MESSAGE);
-        } else if (!usuario.isEmpty()) {
+        } else if (usuario.isPresent()) {
             JFPrincipal principal = new JFPrincipal();
 
             if (usuario.get().getRol().equals(Rol.ADMIN)) {

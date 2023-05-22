@@ -4,11 +4,8 @@
  */
 package com.utp.incidencia.vista;
 
-import javax.swing.JDesktopPane;
+import com.utp.incidencia.controlador.AreaController;
 import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 
 /**
  *
@@ -18,7 +15,6 @@ public class JFPrincipal extends javax.swing.JFrame {
 
     public JFPrincipal() {
         initComponents();
-
     }
 
     public JMenu getOpConfiguracion() {
@@ -185,6 +181,8 @@ public class JFPrincipal extends javax.swing.JFrame {
     private void opAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opAreaActionPerformed
         JIFAreas jArea = new JIFAreas();
         escritorio.add(jArea);
+        new AreaController(jArea).iniciar();
+
         jArea.show();
     }//GEN-LAST:event_opAreaActionPerformed
 

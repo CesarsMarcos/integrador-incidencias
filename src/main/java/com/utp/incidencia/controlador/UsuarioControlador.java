@@ -40,14 +40,6 @@ public class UsuarioControlador {
         return "Usuario Registrado";
     }
 
-    public static void main(String[] args) {
-        UsuarioControlador u = new UsuarioControlador();
-
-        Optional<Usuario> x = u.validarUsuario("CjjjMARCOS", "12345");
-
-        System.out.println(x.get().getNombre());
-        System.out.println(x.get().getApellido());
-
-    }
+   
 
 }
