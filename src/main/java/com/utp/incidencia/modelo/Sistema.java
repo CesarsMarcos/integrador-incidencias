@@ -10,14 +10,14 @@ package com.utp.incidencia.modelo;
  */
 public class Sistema {
 
-    private Integer id;
+    private String id;
     private String desSistema;
     private String desCorta;
 
     public Sistema() {
     }
 
-    public Sistema(Integer id, String desSistema, String desCorta) {
+    public Sistema(String id, String desSistema, String desCorta) {
         this.id = id;
         this.desSistema = desSistema;
         this.desCorta = desCorta;
@@ -35,11 +35,11 @@ public class Sistema {
         this.desSistema = desSistema;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

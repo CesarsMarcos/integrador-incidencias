@@ -10,14 +10,13 @@ package com.utp.incidencia.modelo;
  */
 public class Incidencia {
 
-    private int id;
-    private String asunto, descripcion, prioridad, equipo, contacto, area, tipo;
+    private String cdIncidencia, asunto, descripcion, prioridad, equipo, contacto, area, tipo;
 
     public Incidencia() {
     }
 
-    public Incidencia(int id, String asunto, String descripcion, String prioridad, String equipo, String contacto, String area, String tipo) {
-        this.id = id;
+    public Incidencia(String cdIncidencia, String asunto, String descripcion, String prioridad, String equipo, String contacto, String area, String tipo) {
+        this.cdIncidencia = cdIncidencia;
         this.asunto = asunto;
         this.descripcion = descripcion;
         this.prioridad = prioridad;
@@ -25,14 +24,6 @@ public class Incidencia {
         this.contacto = contacto;
         this.area = area;
         this.tipo = tipo;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getAsunto() {
@@ -89,6 +80,14 @@ public class Incidencia {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getCdIncidencia() {
+        return cdIncidencia;
+    }
+
+    public void setCdIncidencia(String cdIncidencia) {
+        this.cdIncidencia = cdIncidencia;
     }
 
 }

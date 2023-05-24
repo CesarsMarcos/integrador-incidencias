@@ -5,6 +5,7 @@
 package com.utp.incidencia.vista;
 
 import com.utp.incidencia.controlador.AreaController;
+import com.utp.incidencia.controlador.IncidenciaController;
 import javax.swing.JMenu;
 
 /**
@@ -51,6 +52,11 @@ public class JFPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Panel Principal");
+        setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        escritorio.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
@@ -60,7 +66,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 778, Short.MAX_VALUE)
+            .addGap(0, 827, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -175,6 +181,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     private void opNuevaIncidenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opNuevaIncidenciaActionPerformed
         JIFIncidencia jIncidencia = new JIFIncidencia();
         escritorio.add(jIncidencia);
+        new IncidenciaController(jIncidencia).iniciar();
         jIncidencia.show();
     }//GEN-LAST:event_opNuevaIncidenciaActionPerformed
 
@@ -182,7 +189,6 @@ public class JFPrincipal extends javax.swing.JFrame {
         JIFAreas jArea = new JIFAreas();
         escritorio.add(jArea);
         new AreaController(jArea).iniciar();
-
         jArea.show();
     }//GEN-LAST:event_opAreaActionPerformed
 
